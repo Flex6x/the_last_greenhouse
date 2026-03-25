@@ -1,31 +1,32 @@
-[gd_scene load_steps=8 format=3 uid="uid://dfwxrb8ok11fw"]
+[gd_scene load_steps=9 format=3 uid="uid://dfwxrb8ok11fw"]
 
 [ext_resource type="Texture2D" uid="uid://b8tcf06v6qvp7" path="res://assets/sprites/Generic Male NPCs.png" id="1_b1gad"]
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_c5lyr"]
+[ext_resource type="Script" path="res://scripts/animated_sprite_2d.gd" id="3_6ryxs"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_md2at"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_3ebba"]
 atlas = ExtResource("1_b1gad")
 region = Rect2(0, 720, 80, 120)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ud2s2"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_nrq2m"]
 atlas = ExtResource("1_b1gad")
 region = Rect2(80, 720, 80, 120)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_vv240"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_k862n"]
 atlas = ExtResource("1_b1gad")
 region = Rect2(160, 720, 80, 120)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_6wh4b"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_o54tn"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_md2at")
+"texture": SubResource("AtlasTexture_3ebba")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ud2s2")
+"texture": SubResource("AtlasTexture_nrq2m")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_vv240")
+"texture": SubResource("AtlasTexture_k862n")
 }],
 "loop": true,
 "name": &"idle",
@@ -41,9 +42,10 @@ script = ExtResource("1_c5lyr")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -51)
 scale = Vector2(0.89823, 1)
-sprite_frames = SubResource("SpriteFrames_6wh4b")
+sprite_frames = SubResource("SpriteFrames_o54tn")
 animation = &"idle"
-frame_progress = 0.516611
+frame_progress = 0.698066
+script = ExtResource("3_6ryxs")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -9)
