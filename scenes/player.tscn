@@ -1,0 +1,50 @@
+[gd_scene load_steps=8 format=3 uid="uid://dfwxrb8ok11fw"]
+
+[ext_resource type="Texture2D" uid="uid://b8tcf06v6qvp7" path="res://assets/sprites/Generic Male NPCs.png" id="1_b1gad"]
+[ext_resource type="Script" path="res://scripts/player.gd" id="1_c5lyr"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_md2at"]
+atlas = ExtResource("1_b1gad")
+region = Rect2(0, 720, 80, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ud2s2"]
+atlas = ExtResource("1_b1gad")
+region = Rect2(80, 720, 80, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vv240"]
+atlas = ExtResource("1_b1gad")
+region = Rect2(160, 720, 80, 120)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6wh4b"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_md2at")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ud2s2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vv240")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qq30p"]
+radius = 9.05539
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_c5lyr")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -51)
+scale = Vector2(0.89823, 1)
+sprite_frames = SubResource("SpriteFrames_6wh4b")
+animation = &"idle"
+frame_progress = 0.516611
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -9)
+shape = SubResource("CircleShape2D_qq30p")
